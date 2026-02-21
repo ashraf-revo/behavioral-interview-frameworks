@@ -1,6 +1,6 @@
 # Behavioral & Leadership Interview Questions
 
-A practical, seniority-aware guide to preparing behavioral and leadership interviews using structured, measurable storytelling.
+A practical, seniority-aware guide to preparing for behavioral and leadership interviews using structured, measurable storytelling.
 
 This repository contains a comprehensive list of behavioral and leadership interview questions an interviewer might ask to evaluate experience, judgement, and interpersonal skills. Use these prompts to prepare STAR-based stories, practice follow-up probes, and tailor answers to the role and seniority level.
 
@@ -15,6 +15,7 @@ Sections:
 - Mentorship, hiring & development
 - Strategy, vision & change
 - Diversity, equity & inclusion
+- Remote & hybrid work
 - Situational / role-specific prompts
 - Reflection, growth & closing questions
 
@@ -28,6 +29,9 @@ Sections:
 - Share a situation where you had to balance conflicting priorities.
 - Describe a time you made a mistake and how you corrected it.
 - Give an example of when you had to adapt to a major change at work.
+- What is the first thing you would do in your first 30/60/90 days in this role?
+- How do you approach ramping up on a new codebase or domain?
+- Describe your process for understanding the team's current challenges when you first join.
 
 **Leadership & management**
 - Describe your leadership style with a specific example.
@@ -37,6 +41,8 @@ Sections:
 - Tell me about a time you had to make a trade-off between people, time, and scope.
 - Share an example of influencing senior stakeholders with limited authority.
 - Describe a time you had to scale processes, hiring, or operations.
+- Describe how you manage agile ceremonies (e.g., retrospectives, planning) to ensure they are productive.
+- Tell me about a time you improved an agile process that wasn't working.
 
 **Teamwork & collaboration**
 - Tell me about a time you partnered with another team to achieve a goal.
@@ -55,6 +61,8 @@ Sections:
 - Describe a situation where you had to deliver difficult feedback.
 - Share an example when you mediated a conflict between teammates.
 - Give an instance when you had to escalate an issue. What happened?
+- Describe a conflict you had with a colleague and how you handled it.
+- Tell me about a time you had a technical disagreement with a peer.
 
 **Decision-making & problem solving**
 - Describe a tough decision you made with incomplete information.
@@ -169,5 +177,3 @@ Guidance notes:
 - Scope: state team size, budget, timelines and the organizational level affected.
 - Agency: be explicit about your role vs. teammates to avoid ambiguity.
 - Reflection: senior interviews often probe "what you'd change"—include constructive retrospection.
-
-File: [README.md](README.md)
