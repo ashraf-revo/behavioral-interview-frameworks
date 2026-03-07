@@ -115,6 +115,23 @@ This repository contains a comprehensive list of behavioral and leadership inter
 
 ---
 
+## How to Contribute
+
+Contributions are welcome! This project is designed to be a community-driven resource. Here are a few ways you can help:
+
+*   **Add or Improve Questions:** If you have a great behavioral question that's not on the list, or you think an existing question could be improved, please open a pull request.
+*   **Add a Mock Interview:** Create a new mock interview for a specific seniority level. You can use the existing mock interviews as a template.
+*   **Improve Existing Mock Interviews:** Add more questions and answers to the existing mock interviews, or improve the quality of the existing answers.
+*   **Suggest a New Seniority Level:** If you think there's a seniority level that's missing, please open an issue to discuss it.
+
+When contributing, please follow these guidelines:
+
+*   Keep the tone professional and constructive.
+*   Use the STAR method for all behavioral question answers.
+*   Ensure that all contributions are your own original work.
+
+---
+
 ## Seniority Guidance
 
 Use this guide to tailor your stories. As seniority increases, your answers should demonstrate a broader scope of influence, a deeper understanding of business impact, and more sophisticated handling of ambiguity and trade-offs.
