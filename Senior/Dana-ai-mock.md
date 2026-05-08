@@ -1,0 +1,99 @@
+```markdown
+# Mock Interview: Senior Software Engineer
+
+**Candidate:** Dana, a software engineer with 5 years of experience, currently a Senior Engineer at an e-commerce company.
+
+**Interviewer:** Raj, a Staff Software Engineer at a mid-size SaaS company.
+
+---
+
+### Introduction
+
+**Raj:** Hi Dana, thanks for joining today. I'm Raj, a Staff Engineer on the payments and checkout team. I've been here about four years. Could you tell me about your background and what you're looking for?
+
+**Dana:** Hi Raj, nice to meet you. I've been in software engineering for five years. I started at a consulting firm building web applications for financial services clients, which gave me broad exposure to different tech stacks and problem domains. Two years ago, I moved to an e-commerce company where I've been a Senior Engineer on the product catalog team. I own our search and filtering infrastructure — we handle about 8 million products across 200,000 sellers. I'm looking for a role where I can deepen my impact on a complex technical product and continue growing toward a tech lead path.
+
+---
+
+### Behavioral Questions
+
+**Raj:** Great background. Let's start — tell me about a recent project you owned end-to-end. What was the outcome?
+
+**Dana:**
+*   **Situation:** Our product search was powered by an Elasticsearch cluster that had been set up three years earlier and never significantly tuned. Search relevance was a top customer complaint — our NPS surveys consistently showed "can't find what I'm looking for" as the number one frustration. The search team had been patching relevance issues one-off with manual boosting rules, resulting in over 300 hand-written rules that no one fully understood.
+*   **Task:** I proposed and owned a project to overhaul our search relevance from the ground up — replacing the brittle rules-based approach with a data-driven ranking model.
+*   **Action:** I started by analyzing our search logs to understand failure patterns. I found that 35% of searches that resulted in zero purchases had relevant products in our catalog — the ranking was just burying them. I designed a new relevance pipeline using Elasticsearch's Learning to Rank plugin, trained on click-through and purchase data from the past six months. I collaborated with our data science team to define the feature set — query-product text match, seller rating, conversion rate, and recency. I implemented the pipeline, set up A/B testing infrastructure to compare the new model against the existing rules, and ran a three-week experiment with 10% of traffic. I also created a relevance evaluation framework using human-judged query sets so we could measure quality beyond just click metrics.
+*   **Result:** The new ranking model improved search-to-purchase conversion by 18% and reduced zero-result rates by 42%. We retired 280 of the 300 manual boosting rules. The A/B test results were so clear that the product team fast-tracked the full rollout. I documented the relevance evaluation framework, and it's now used quarterly to benchmark search quality.
+
+**Raj:** Solid. Share a situation where you had to balance conflicting priorities.
+
+**Dana:**
+*   **Situation:** I was leading the implementation of a new faceted filtering system for our product catalog — a project that had been on the roadmap for two quarters. Midway through, our biggest seller partner reported that their bulk product upload API was failing intermittently, causing them to lose inventory updates during their peak sales period. They were threatening to move to a competitor platform.
+*   **Task:** I had to decide how to allocate my time between the filtering project, which had a committed delivery date tied to a marketing campaign, and the urgent API issue affecting our highest-revenue partner.
+*   **Action:** I spent half a day triaging the API issue and discovered it was caused by a timeout in our synchronous validation step when uploads exceeded 10,000 products. I estimated a proper fix — making the validation asynchronous with a webhook callback — would take about a week. I proposed a plan to my manager: I'd implement a targeted fix for the API by increasing the timeout threshold and adding batch chunking as a quick mitigation (one day of work), then return to the filtering project. The proper async fix would be scheduled for the following sprint. I also communicated directly with the partner's technical team to explain the mitigation and set expectations for the permanent fix.
+*   **Result:** The quick mitigation resolved the partner's immediate issue within 24 hours, and they decided to stay on our platform. I delivered the filtering project two days after the original deadline — within the buffer the marketing team had built in. The async validation fix shipped the following sprint and reduced upload failure rates by 95% for all sellers, not just the one who reported it.
+
+**Raj:** Tell me about a time you mentored someone and the impact it had.
+
+**Dana:**
+*   **Situation:** A mid-level engineer on my team was technically competent but struggled with scoping and estimation. They would consistently underestimate the complexity of their tasks, commit to aggressive timelines, and then work overtime to meet them — or miss deadlines and feel demoralized. Their manager had flagged it but wasn't sure how to help beyond saying "estimate more carefully."
+*   **Task:** I wanted to help this engineer develop a practical, repeatable approach to estimation and scoping rather than just telling them to "pad their estimates."
+*   **Action:** I set up weekly working sessions where we'd take their upcoming tasks and I'd walk through my estimation process out loud — identifying unknowns, listing integration points, considering testing effort, and adding time for code review iterations. I introduced them to the technique of breaking tasks into subtasks of no more than half a day each, which forces you to think concretely about what's involved. I also had them keep a log comparing their estimates to actuals for two months so they could see their own patterns — they discovered they consistently forgot to account for testing and deployment.
+*   **Result:** After three months, their estimation accuracy improved dramatically — they went from hitting deadlines about 40% of the time to 85%. More importantly, they stopped working excessive overtime because they were committing to realistic scopes. Their manager noticed the change and mentioned it in their performance review. The engineer told me the estimation log technique was the most useful skill anyone had taught them, and they started using it with a junior engineer they were onboarding.
+
+**Raj:** Describe a tough decision you made with incomplete information.
+
+**Dana:**
+*   **Situation:** We were experiencing a gradual increase in latency on our product detail page API — p99 had crept from 400ms to 1.2 seconds over two months. I had two hypotheses: either our Elasticsearch cluster was undersized for our growing index, or a recently added "similar products" recommendation feature was making expensive queries. I didn't have time to thoroughly investigate both before the latency started impacting SEO rankings and customer experience.
+*   **Task:** I needed to decide which hypothesis to pursue first and take action quickly, knowing I might invest time in the wrong direction.
+*   **Action:** I looked at the timing correlation — the latency increase coincided with the similar products feature launch, which was suggestive but not conclusive since the index was also growing during that period. I checked Elasticsearch cluster metrics and saw that CPU and memory utilization were elevated but not at critical levels, suggesting the cluster wasn't the primary bottleneck. Based on this quick analysis, I decided to focus on the recommendation queries first. I added detailed query-level logging to the similar products feature and found that it was running an expensive `more_like_this` query with no result size limit or caching on every page load.
+*   **Result:** Adding a result size cap, a 5-minute cache, and query optimization to the similar products feature brought p99 latency back down to 450ms — better than before the feature launched. The whole investigation and fix took three days. If I'd started with the cluster sizing hypothesis, I would have spent time and money scaling infrastructure that wasn't the actual problem.
+
+**Raj:** Give an example of a high-impact problem you solved and the steps you took.
+
+**Dana:**
+*   **Situation:** Our seller onboarding flow had a 34% abandonment rate at the "upload your product catalog" step. Product management assumed it was a UX issue, but after talking to sellers who had abandoned, I suspected it was a technical problem — the upload process was unreliable for large catalogs and gave no useful error messages when it failed.
+*   **Task:** I took the initiative to investigate the technical side of the abandonment problem and propose a solution, even though it wasn't part of my team's current sprint goals.
+*   **Action:** I reviewed the upload service logs and found that 60% of failed uploads were due to CSV parsing errors from encoding mismatches — sellers were exporting from Excel in various locales, and our parser only handled UTF-8. Another 25% of failures were from hitting our 30-second request timeout on catalogs with more than 5,000 products. I implemented three changes: automatic encoding detection using charset heuristics, a streaming upload endpoint that processed products in batches of 500 with progress reporting, and detailed per-row error messages that told sellers exactly which products had issues and why instead of a generic "upload failed" message.
+*   **Result:** The abandonment rate at the upload step dropped from 34% to 12% within one month. The number of support tickets about uploads decreased by 70%. Our Head of Seller Operations called it out in a company meeting as one of the highest-impact improvements that quarter. The streaming upload pattern was later adopted for our bulk pricing update and inventory sync features.
+
+**Raj:** Tell me about a time you persuaded someone to change their mind.
+
+**Dana:**
+*   **Situation:** Our product manager wanted to build a custom recommendation engine in-house to power "customers also bought" suggestions. They had seen impressive demos from our data science team's prototype and wanted to commit a full squad to building and maintaining it. I was concerned because the prototype used a simplified dataset and didn't account for the operational complexity of running a real-time ML inference service.
+*   **Task:** I needed to make the case for using a managed recommendation service instead, without dismissing the data science team's work or the PM's vision.
+*   **Action:** I put together a comparison that went beyond just the initial build cost. I estimated the total cost of ownership over 12 months for both approaches: the in-house solution would require ML infrastructure (model serving, feature store, A/B testing), ongoing model retraining, monitoring for model drift, and on-call support — roughly 2.5 engineers of continuous investment. The managed service (Amazon Personalize in our case) would cost more in direct service fees but would need only 0.5 engineers for integration and maintenance. I presented this to the PM alongside two case studies from companies our size that had started with managed services and only moved in-house after reaching a scale where customization justified the investment.
+*   **Result:** The PM agreed to start with the managed service and revisit the in-house approach in 12 months if we outgrew it. We launched product recommendations in six weeks instead of the estimated four months for the in-house build. The recommendations drove a 9% increase in average order value. Twelve months later, the managed service was still meeting our needs and we hadn't needed to revisit the decision.
+
+**Raj:** Share a time you had to communicate bad news. How did you approach it?
+
+**Dana:**
+*   **Situation:** Three weeks into a six-week project to migrate our product image storage from a self-hosted NFS server to S3, I discovered that our image processing pipeline had hard-coded file system paths in over 40 places across three services. The migration would require changing all of these references, which meant touching code owned by two other teams. My original estimate hadn't accounted for this cross-team coordination.
+*   **Task:** I needed to tell my manager and the project stakeholders that the project would take significantly longer than planned — likely nine weeks instead of six.
+*   **Action:** Rather than just delivering the bad news, I prepared a concrete picture of the situation. I documented all 40+ hard-coded references, grouped them by service and owning team, and estimated the effort for each group. I also identified which changes I could make myself versus which required the other teams' involvement. I presented three options: extend the timeline to nine weeks and do a clean migration, do a partial migration of only our team's services in six weeks and leave the others for later (which would mean running two storage systems temporarily), or invest one week in building an abstraction layer first and then migrate all services against the abstraction. I recommended option three because, although it added one week over the original estimate, it prevented us from having to touch those 40+ references again in the future.
+*   **Result:** My manager appreciated the thorough analysis and agreed to option three. The other two team leads were willing to prioritize the changes once I'd provided the abstraction layer and clear migration instructions. We completed the full migration in seven weeks — only one week over the original estimate. The storage abstraction layer also made it trivial to add CDN caching later, which reduced our image serving costs by 40%.
+
+**Raj:** Describe a situation where you had to deliver difficult feedback.
+
+**Dana:**
+*   **Situation:** A peer on my team — someone at the same seniority level — had a pattern of submitting large, complex pull requests with minimal description and no test coverage. Their code worked, but the reviews took hours, other engineers avoided reviewing their PRs, and bugs would surface weeks later in edge cases that tests would have caught. The situation was creating friction on the team.
+*   **Task:** I wanted to address this directly with my peer, since our manager had mentioned it in retros generically without improvement.
+*   **Action:** I asked my peer for a coffee chat and framed the conversation around team productivity rather than personal criticism. I shared specific data: their average PR had 800+ lines changed (team average was 200), their PRs took an average of 4 days to merge versus the team's 1.5 days, and two production bugs in the last month were traced to untested edge cases in their code. I acknowledged that their throughput was impressive — they were shipping more features than anyone — but explained that the downstream cost was being absorbed by the rest of the team. I offered to pair with them on breaking their next feature into smaller, reviewable PRs and showed them how I use test-driven development to catch edge cases early.
+*   **Result:** My peer was initially defensive but came around after seeing the data. We paired on their next feature and broke it into five incremental PRs instead of one large one. Over the following month, their average PR size dropped to 300 lines, review times shortened to 1.5 days, and they started writing tests proactively. They later thanked me for the feedback and said no one had ever shown them concretely what "smaller PRs" looked like in practice.
+
+**Raj:** Give an instance when you had to escalate an issue. What happened?
+
+**Dana:**
+*   **Situation:** Our product catalog service depended on a shared inventory service owned by another team. That service had been experiencing degraded performance for two weeks — response times had tripled — and it was causing our product listing pages to time out for sellers with large inventories. I'd raised the issue with the inventory team's lead twice, but they were focused on a different priority and kept deferring the investigation.
+*   **Task:** I needed to get the performance issue prioritized without damaging my relationship with the other team.
+*   **Action:** I decided to escalate, but I wanted to make the escalation as helpful as possible rather than just saying "this team isn't fixing their issue." I spent two hours profiling the inventory service's API from my side and identified that the degradation correlated with a recent deployment they'd made. I documented the performance data, the customer impact (12 seller complaints, 3 from our top 50 sellers), and my preliminary root cause hypothesis. I then sent an email to my manager and the inventory team's manager with the subject line "Shared inventory service performance impacting seller experience — data and proposed path forward." I included the data, a clear ask (4 hours of investigation from their team), and offered to pair with their engineer on the fix.
+*   **Result:** The inventory team's manager appreciated the thorough writeup and assigned an engineer to investigate the same day. My hypothesis was correct — a recent change had inadvertently removed a database index. The fix took 30 minutes once identified. The inventory team's lead later thanked me for escalating with data rather than just frustration, and we established a shared Slack channel for cross-team performance monitoring going forward.
+
+**Raj:** Tell me about a time you had a technical disagreement with a peer.
+
+**Dana:**
+*   **Situation:** A fellow senior engineer and I disagreed on how to implement a new product variant system. They advocated for a document-oriented approach using MongoDB, arguing that product variants have inherently flexible schemas — a t-shirt has size and color, while a laptop has RAM and storage. I believed we should use PostgreSQL with a well-designed relational model using an EAV (entity-attribute-value) pattern or JSONB columns, since the rest of our stack was PostgreSQL and introducing a new database would increase operational complexity.
+*   **Task:** We needed to align on an approach before the sprint started, as this was a foundational design decision that would be expensive to change later.
+*   **Action:** I suggested we evaluate both options against three criteria we both agreed mattered: query performance for our expected access patterns (filtering products by variant attributes), operational burden (backups, monitoring, expertise), and developer experience. I spent a day prototyping the JSONB approach in PostgreSQL with GIN indexes for the filtering use case. My peer built a parallel prototype in MongoDB. We then ran the same set of benchmark queries against both prototypes and compared the operational requirements. The PostgreSQL JSONB approach handled our filtering queries comparably to MongoDB, and using a database our team already operated meant zero additional ops burden.
+*   **Result:** My peer agreed that the operational simplicity argument was decisive given our team's current capacity. We went with PostgreSQL JSONB, and the variant system launched successfully. The approach handled our access patterns well, and we avoided the cost of operating and maintaining a separate MongoDB cluster. My peer and I strengthened our working relationship through the process — we now default to structured evaluations when we disagree.
+```
