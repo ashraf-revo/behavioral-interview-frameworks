@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Senior Software Engineer
 
 **Candidate:** Omar, a software engineer with 6 years of experience, currently a Senior Engineer at a healthcare scheduling platform.
@@ -96,4 +96,3 @@
 *   **Task:** We needed to reach a decision quickly — the feature was already in the sprint — but neither of us wanted to commit to the wrong choice for a customer-facing feature that would be hard to re-platform later.
 *   **Action:** I suggested we spend two days on a parallel spike. I'd build a prototype in Elasticsearch and my colleague would build one in PostgreSQL, both using the same test dataset of 50,000 providers across 800 clinics. We defined three benchmark scenarios upfront: single-specialty search within a 10-mile radius, multi-filter search combining specialty, availability window, and insurance acceptance, and a "worst case" query combining all filters with fuzzy text matching. We also agreed on non-functional criteria: response time under 200ms at p95, and the ability to update availability data within 30 seconds of a booking.
 *   **Result:** The benchmarks were illuminating. PostgreSQL handled the single-filter queries well (120ms p95) but degraded to 800ms on the multi-filter fuzzy queries. Elasticsearch handled all three scenarios under 50ms. However, my colleague's prototype surfaced a valid concern I hadn't considered: the near-real-time availability updates required a custom change-data-capture pipeline to keep Elasticsearch in sync, adding operational complexity. We agreed on Elasticsearch for the search with a CDC pipeline using Debezium, and we allocated an extra sprint to build the pipeline properly with monitoring and reconciliation. The feature launched with sub-100ms search times and has been reliable for two years.
-```

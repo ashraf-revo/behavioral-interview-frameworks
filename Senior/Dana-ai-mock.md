@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Senior Software Engineer
 
 **Candidate:** Dana, a software engineer with 5 years of experience, currently a Senior Engineer at an e-commerce company.
@@ -96,4 +96,3 @@
 *   **Task:** We needed to align on an approach before the sprint started, as this was a foundational design decision that would be expensive to change later.
 *   **Action:** I suggested we evaluate both options against three criteria we both agreed mattered: query performance for our expected access patterns (filtering products by variant attributes), operational burden (backups, monitoring, expertise), and developer experience. I spent a day prototyping the JSONB approach in PostgreSQL with GIN indexes for the filtering use case. My peer built a parallel prototype in MongoDB. We then ran the same set of benchmark queries against both prototypes and compared the operational requirements. The PostgreSQL JSONB approach handled our filtering queries comparably to MongoDB, and using a database our team already operated meant zero additional ops burden.
 *   **Result:** My peer agreed that the operational simplicity argument was decisive given our team's current capacity. We went with PostgreSQL JSONB, and the variant system launched successfully. The approach handled our access patterns well, and we avoided the cost of operating and maintaining a separate MongoDB cluster. My peer and I strengthened our working relationship through the process — we now default to structured evaluations when we disagree.
-```

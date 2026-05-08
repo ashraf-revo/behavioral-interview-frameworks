@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Engineering Manager
 
 **Candidate:** Alex, an Engineering Manager with 12 years of experience, with the last 4 as a Manager.
@@ -96,4 +96,3 @@
 *   **Task:** I needed to create a more structured and scalable onboarding process.
 *   **Action:** I started by documenting our existing onboarding process and identifying the biggest pain points. I then created a new onboarding checklist that included everything from setting up a development environment to meeting with key team members. I also created a set of onboarding documents and training materials.
 *   **Result:** The new onboarding process made it much easier for new hires to ramp up quickly. We received positive feedback from new hires, and the team's productivity improved as a result.
-```

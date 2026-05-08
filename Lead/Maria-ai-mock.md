@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Tech Lead
 
 **Candidate:** Maria, a software engineer with 8 years of experience, with the last 2 as a Tech Lead.
@@ -96,4 +96,3 @@
 *   **Task:** I needed to help the team improve their sprint planning and execution.
 *   **Action:** I started by analyzing our sprint data and found that we were not accurately estimating our work. I then introduced a new estimation technique called "planning poker" to help the team come up with more realistic estimates. I also encouraged the team to break down large stories into smaller, more manageable tasks.
 *   **Result:** The team's estimation accuracy improved, and we started to consistently meet our sprint commitments. The team's morale also improved as they felt more in control of their work.
-```

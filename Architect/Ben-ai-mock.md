@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Software Architect
 
 **Candidate:** Ben, a Software Architect with 15 years of experience.
@@ -96,4 +96,3 @@
 *   **Task:** I needed to find a balance between meeting the customer's needs and maintaining the long-term health of our codebase.
 *   **Action:** I proposed a phased approach. We would first deliver a "minimum viable product" (MVP) version of the feature that met the customer's immediate needs but was built on a solid architectural foundation. We would then iterate on the feature in subsequent sprints to add more functionality and refine the implementation.
 *   **Result:** The customer was happy with the MVP, and we were able to deliver it on time. The phased approach allowed us to avoid technical debt and ensure that the feature was scalable and maintainable in the long run.
-```

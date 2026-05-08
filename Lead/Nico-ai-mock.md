@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Tech Lead
 
 **Candidate:** Nico, a software engineer with 9 years of experience, with the last 3 as a Tech Lead at a travel technology company.
@@ -88,4 +88,3 @@
 *   **Task:** I needed to have an honest conversation with my manager about role boundaries without damaging our relationship or making them feel like I was pushing them away from the team.
 *   **Action:** I requested a one-on-one and started by affirming what I valued about their involvement — their technical instincts were often right, and the team respected their experience. I then described the specific pattern I was seeing: I shared two examples where engineers had received conflicting direction from the two of us, and one where a task reassignment in standup had disrupted a carefully planned sprint dependency. I framed the issue as a role clarity problem, not a personality issue: "The team needs one clear technical decision-maker in the room, and I think we both want that to be the Tech Lead." I proposed that they attend standups as a listener and raise any technical concerns with me afterward, so I could incorporate their input and present a unified direction to the team. For topics where they wanted to be more hands-on, I suggested they join our design reviews, where their architectural experience was genuinely valuable.
 *   **Result:** My manager appreciated the directness and agreed to the new approach. They later told me they hadn't realized the impact because no one else had said anything. The role clarity improved immediately — engineers stopped going around me, and I regained full visibility into the team's work. My manager became one of our most valuable design review participants, contributing insights that improved several critical designs. Our working relationship actually strengthened because we'd demonstrated we could have hard conversations productively.
-```

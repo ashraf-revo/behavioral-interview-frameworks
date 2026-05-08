@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Senior Software Engineer
 
 **Candidate:** Casey, a software engineer with 6 years of experience.
@@ -96,4 +96,3 @@
 *   **Task:** We needed to agree on a technology choice to move forward.
 *   **Action:** I suggested that we evaluate both options based on a set of criteria, including stability, performance, and maintainability. We also considered the learning curve for the team and the long-term support for each technology.
 *   **Result:** After a thorough evaluation, we agreed that the existing technology stack was the better choice for this project. My peer acknowledged the risks associated with the experimental framework and agreed to use it for a smaller, less critical project in the future.
-```

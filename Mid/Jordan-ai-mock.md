@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Mid-Level Software Engineer
 
 **Candidate:** Jordan, a software engineer with 3 years of experience.
@@ -96,4 +96,3 @@
 *   **Task:** I needed to explain the concept of canary deployments and risk mitigation without using technical jargon.
 *   **Action:** I used the analogy of testing the water temperature before jumping in. I explained that we want to let a small group of users try the feature first to make sure there are no "sharks" (bugs) before we let everyone in. This way, if something goes wrong, only a few people are affected, and we can fix it quickly.
 *   **Result:** The marketing team understood the reasoning and agreed to the phased rollout plan. They even used the "testing the water" analogy when communicating the timeline to other stakeholders.
-```

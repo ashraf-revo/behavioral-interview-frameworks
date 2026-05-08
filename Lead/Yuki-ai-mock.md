@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Tech Lead
 
 **Candidate:** Yuki, a software engineer with 7 years of experience, with the last 2 as a Tech Lead at a logistics technology company.
@@ -96,4 +96,3 @@
 *   **Task:** I needed to redirect the PM's behavior without creating an adversarial relationship — we had to work together closely every day and I respected their product expertise.
 *   **Action:** I asked the PM for a 1:1 over coffee, framing it as "I want to make sure we're working together as effectively as possible." I started by acknowledging the value of their urgency — their instinct to unblock things quickly was something I admired. Then I shared the impact of the direct requests: I showed three specific examples from the past month where a direct ask had caused a sprint item to slip, and explained that the engineers felt caught between competing priorities. I proposed a simple protocol — for anything urgent, the PM would message me first, and I'd either re-prioritize immediately or explain the trade-off so we could decide together. For planned work, everything would go through backlog refinement as usual.
 *   **Result:** The PM was receptive — they genuinely hadn't realized the impact of their approach. We adopted the protocol, and it worked well. Urgent requests still got handled quickly (usually within hours), but with visibility and conscious trade-off decisions. The PM later told me it actually made their life easier too, because I'd often suggest simpler solutions or point out when a "urgent" request was already covered by existing work. Our working relationship became one of the strongest PM-Tech Lead partnerships in the company.
-```

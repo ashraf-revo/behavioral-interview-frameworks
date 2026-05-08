@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Entry-Level Software Engineer
 
 **Candidate:** Alex, a recent computer science graduate with 1 year of internship experience.
@@ -96,4 +96,3 @@
 *   **Task:** I need to become productive in a new environment.
 *   **Action:** I usually start by looking at the high-level architecture diagrams if they exist. Then, I try to trace the path of a single request through the system, from the API endpoint down to the database and back. I find that debugging and stepping through the code is the best way to learn. I also look at the unit tests to understand the expected behavior of different components.
 *   **Result:** This method helps me build a mental model of the system. In my last internship, this approach helped me understand a complex legacy module well enough to refactor it within my first two months.
-```

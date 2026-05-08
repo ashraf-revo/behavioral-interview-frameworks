@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Staff Software Engineer
 
 **Candidate:** Priya, a software engineer with 12 years of experience, with the last 4 as a Staff Engineer at a fintech company.
@@ -96,4 +96,3 @@
 *   **Task:** I wanted to restructure how we made architectural decisions so that the best ideas won regardless of who proposed them or how comfortable they were speaking up in a meeting.
 *   **Action:** I introduced three changes to our review process. First, I required all RFCs to go through an asynchronous written comment period of 72 hours before the live review meeting, giving everyone time to formulate and share their thoughts. Second, I implemented "designated reviewer" rotation — for each RFC, I specifically assigned two reviewers from different teams and seniority levels, ensuring fresh perspectives were explicitly invited. Third, during live meetings, I adopted a "round-robin first reactions" format where every attendee shared one observation before open discussion began. I also started hosting quarterly "architecture open mic" sessions — informal forums where anyone could pitch an idea or raise a concern without needing a formal RFC.
 *   **Result:** Written participation in RFC reviews increased by 3x, with contributions from 40% more unique engineers. Two of our most impactful architectural improvements that year — a cache invalidation redesign and a multi-region failover strategy — were proposed by mid-level engineers who had never spoken up in the old format. Our employee engagement survey scores for "my technical ideas are valued" improved by 22 points. The process changes were adopted by three other engineering organizations within the company.
-```

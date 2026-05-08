@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Staff Software Engineer
 
 **Candidate:** Theo, a software engineer with 11 years of experience, with the last 3 as a Staff Engineer at a healthcare technology company.
@@ -88,4 +88,3 @@
 *   **Task:** I needed to scale my technical influence by building systems and developing people, rather than being personally involved in every decision.
 *   **Action:** I implemented three mechanisms. First, I created an "Architecture Decision Record" (ADR) system — a lightweight, version-controlled format where teams documented significant technical decisions with context, options considered, and rationale. This replaced the bottleneck of waiting for my review with a searchable history that teams could reference for precedent. Second, I established a rotating "Architecture Advisory" role where a senior engineer from each team served a quarterly rotation as the go-to architectural reviewer for their area, with me providing coaching to these advisors rather than doing the reviews myself. Third, I wrote a series of internal technical strategy memos — "North Star" documents covering topics like our data architecture principles, API design standards, and reliability requirements — that gave teams guardrails to make decisions autonomously within well-defined boundaries.
 *   **Result:** Within six months, the average time for an architectural review dropped from five days to one day. The ADR repository grew to 80+ records and became the first place engineers checked before starting a new design. Four of the rotating architecture advisors developed enough skill and confidence to be promoted to Staff-level roles within a year. Most importantly, the quality of technical decisions across the org remained high even as I stepped back from direct involvement — which I consider the ultimate measure of a Staff Engineer's impact.
-```

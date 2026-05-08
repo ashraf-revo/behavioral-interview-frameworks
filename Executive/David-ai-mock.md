@@ -1,4 +1,4 @@
-```markdown
+
 # Mock Interview: Executive (Director/VP)
 
 **Candidate:** David, a VP of Engineering with 18 years of experience.
@@ -96,4 +96,3 @@
 *   **Task:** I want to ensure that I am constantly growing and evolving as a leader.
 *   **Action:** I regularly reflect on my interactions with my team and my peers. I ask myself questions like: "Did I listen effectively?", "Did I provide clear direction?", and "Did I empower my team to succeed?". I also seek feedback from my team and my manager to identify areas for improvement.
 *   **Result:** This practice of reflection has helped me to become a more self-aware and effective leader. I have been able to build stronger relationships with my team and achieve better results for my organization.
-```
